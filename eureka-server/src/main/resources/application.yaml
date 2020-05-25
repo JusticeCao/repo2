@@ -1,0 +1,19 @@
+server:
+  port: 10086
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10087/eureka
+    register-with-eureka: false
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  server:
+    eviction-interval-timer-in-ms: 30000
+
+

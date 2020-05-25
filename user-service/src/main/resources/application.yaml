@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db_security
+    username: root
+    password: root
+  application:
+    name: user-service
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo  # 对象映射路径包
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+
+  instance:
+    lease-expiration-duration-in-seconds: 90 #与注册中心的心跳续约 每30分钟一次，超过90分钟表示服务已挂
+    lease-renewal-interval-in-seconds: 30
+logging:
+  level:
+    cn.itcast: debug
+
